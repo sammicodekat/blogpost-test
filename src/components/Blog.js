@@ -35,14 +35,16 @@ export default class Blog extends Component {
 
   close(){
     this.setState({ open: false });
+    BlogActions.getBlogs();
   }
 
   _onChange() {
-    BlogActions.getBlogs();
+
     this.setState({ blogs: BlogStore.getBlogs()});
   }
   deleteBlog(id){
     BlogActions.deleteBlog(id)
+    BlogActions.getBlogs();
   }
   markUp(post){
     return {'__html': post};
