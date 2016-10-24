@@ -12,22 +12,21 @@ const API = {
   addBlog(form){
     post('/api/blogs/',form)
     .then(res => {
-      console.log("add blog",res)
-      ServerActions.gotBlogs(res.data);
+      console.log(res)
     })
     .catch(console.error)
   },
   deleteBlog(id){
     axios.delete(`/api/blogs/${id}`)
     .then(res => {
-      ServerActions.gotBlogs(res.data);
+    console.log(res)
     })
     .catch(console.error)
   },
   editBlog(id,form){
     put(`/api/blogs/${id}`,form)
     .then(res => {
-      ServerActions.gotBlogs(res.data);
+    console.log(res)
     })
     .catch(console.error)
   }

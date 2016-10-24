@@ -38,6 +38,7 @@ export default class Blog extends Component {
   }
 
   _onChange() {
+    BlogActions.getBlogs();
     this.setState({ blogs: BlogStore.getBlogs()});
   }
   deleteBlog(id){

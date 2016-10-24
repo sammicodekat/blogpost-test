@@ -13,7 +13,6 @@ router.route('/')
 .post((req,res) => {
   Blog.create(req.body)
   .then(blog => {
-
     res.send(blog)
   })
   .catch((err) => {
