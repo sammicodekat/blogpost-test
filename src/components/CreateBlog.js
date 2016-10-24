@@ -7,10 +7,10 @@ export default class CreateBlog extends Component {
 
   handleSubmit(e, form){
     e.preventDefault()
-    BlogActions.editBlog(form);
+    BlogActions.addBlog(form);
   }
   render(){
-    
+
     return(
       <Comment.Group>
         <Header as='h3' dividing>Blog Name</Header>
