@@ -1,10 +1,10 @@
 import AppDispatcher from '../AppDispatcher'
 
 const ServerActions = {
-  gotMssg(mssg) {
+  gotBlogs(blogs) {
     AppDispatcher.dispatch({
-      type: 'GOT_MSSG',
-      payload: mssg
+      type: 'GOT_BLOGS',
+      payload: blogs
     })
   }
 }

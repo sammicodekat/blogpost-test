@@ -1,4 +1,4 @@
-import { get, post } from 'axios'
+import axios,{ get,post,put } from 'axios'
 import ServerActions from './actions/ServerActions'
 
 const API = {
@@ -10,12 +10,25 @@ const API = {
     .catch(console.error)
   },
   addBlog(form){
-    put('/api/blogs/',form)
+    post('/api/blogs/',form)
     .then(res => {
       ServerActions.gotBlogs(res.data);
     })
     .catch(console.error)
-
+  },
+  deleteBlog(id){
+    axios.delete(`/api/blogs/${id}`)
+    .then(res => {
+      ServerActions.gotBlogs(res.data);
+    })
+    .catch(console.error)
+  },
+  editBlog(id){
+    put(`/api/blogs/${id}`)
+    .then(res => {
+      ServerActions.gotBlogs(res.data);
+    })
+    .catch(console.error)
   }
 }
 

@@ -16,4 +16,4 @@ const BlogActions = {
   }
 }
 
-export default ChatRoomActions;
+export default BlogActions;

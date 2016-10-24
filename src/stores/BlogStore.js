@@ -4,13 +4,13 @@ import Storage from '../Storage';
 
 let _blogs = [];
 
-class ChatRoomStore extends EventEmitter {
+class BlogStore extends EventEmitter {
   constructor() {
     super();
     AppDispatcher.register(action => {
       switch (action.type) {
         case 'GOT_BLOGS':
-        _message = action.payload;
+        _blogs = action.payload;
         this.emit('CHANGE');
         break;
       }
