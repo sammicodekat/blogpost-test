@@ -11,11 +11,13 @@ router.route('/')
   )
 })
 .post((req,res) => {
+  console.log('in blogs route',req.body)
   Blog.create(req.body)
   .then(blog => {
+      console.log('in blogs route result',blog)
     res.send(blog)
   })
-  .catch(() => {
+  .catch((err) => {
     res.status(400).send(err)
   })
 })

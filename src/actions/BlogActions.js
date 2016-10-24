@@ -11,8 +11,8 @@ const BlogActions = {
   deleteBlog(id) {
     API.deleteBlog(id);
   },
-  editBlog(id){
-    API.editBlog(id);
+  editBlog(id,form){
+    API.editBlog(id,form);
   }
 }
 

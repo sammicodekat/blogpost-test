@@ -1,8 +1,7 @@
 import { EventEmitter } from 'events';
 import AppDispatcher from '../AppDispatcher'
 import Storage from '../Storage';
-
-let _blogs = [];
+let _blogs = '';
 
 class BlogStore extends EventEmitter {
   constructor() {

@@ -12,6 +12,7 @@ const API = {
   addBlog(form){
     post('/api/blogs/',form)
     .then(res => {
+      console.log("add blog",res)
       ServerActions.gotBlogs(res.data);
     })
     .catch(console.error)
@@ -23,8 +24,8 @@ const API = {
     })
     .catch(console.error)
   },
-  editBlog(id){
-    put(`/api/blogs/${id}`)
+  editBlog(id,form){
+    put(`/api/blogs/${id}`,form)
     .then(res => {
       ServerActions.gotBlogs(res.data);
     })
